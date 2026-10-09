@@ -1,0 +1,85 @@
+.emiCalculator {
+    .hero { display: flex; align-items: end; justify-content: space-between; gap: 24px; padding: 26px 0 24px; }
+    .context { color: var(--accent); font-size: 10px; font-weight: 800; letter-spacing: .13em; }
+    .hero h1 { margin-top: 10px; font-size: clamp(42px, 5vw, 62px); font-weight: 760; line-height: .98; letter-spacing: -.06em; }
+    .hero h1 span { color: var(--accent); font-family: Georgia, serif; font-weight: 500; font-style: italic; }
+    .description { max-width: 510px; margin-top: 13px; color: var(--muted); font-size: 14px; }
+    .heroNote { display: flex; align-items: center; gap: 12px; padding: 15px 18px; border: 1px solid var(--line); border-radius: 13px; background: var(--card); }
+    .heroNote svg { width: 22px; height: 22px; color: var(--accent); }
+    .heroNote div { display: grid; }
+    .heroNote strong { font-size: 13px; }
+    .heroNote span { color: var(--muted); font-size: 11px; }
+    .presetRow { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+    .presetRow button { display: inline-flex; min-height: 38px; align-items: center; gap: 8px; padding: 0 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); font-size: 12px; font-weight: 650; }
+    .presetRow button svg { width: 15px; height: 15px; }
+    .presetRow .selectedPreset { border-color: var(--accent); color: var(--accent); background: #e7f2ed; }
+    .presetRow .resetButton { margin-left: auto; color: var(--muted); }
+    .presetRow button:hover { border-color: var(--accent); }
+    .workspace { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(330px, .85fr); gap: 16px; align-items: stretch; }
+    .inputPanel, .resultPanel, .schedule { border: 1px solid var(--line); border-radius: 16px; background: var(--card); }
+    .inputPanel { padding: 24px 26px; }
+    .panelHeading { display: flex; align-items: start; justify-content: space-between; margin-bottom: 25px; }
+    .panelHeading h2 { font-size: 20px; font-weight: 740; letter-spacing: -.03em; }
+    .panelHeading p { margin-top: 3px; color: var(--muted); font-size: 12px; }
+    .step { padding: 5px 8px; border-radius: 6px; color: var(--accent); background: #edf5ef; font-size: 9px; font-weight: 800; letter-spacing: .08em; }
+    .field { display: grid; gap: 8px; color: var(--ink); font-size: 12px; font-weight: 700; }
+    .numberInput, .suffixInput { display: flex; height: 46px; align-items: center; border: 1px solid var(--line); border-radius: 9px; background: #fbfcfa; }
+    .numberInput > span { padding-left: 14px; color: var(--muted); }
+    .numberInput input, .suffixInput input { width: 100%; min-width: 0; height: 100%; padding: 0 12px; border: 0; outline: 0; background: transparent; font-size: 16px; font-weight: 700; }
+    .numberInput:focus-within, .suffixInput:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px #15735319; }
+    .range { width: 100%; margin-top: 8px; accent-color: var(--accent); }
+    .rangeLabels { display: flex; justify-content: space-between; margin-top: -5px; color: var(--muted); font-size: 10px; font-weight: 500; }
+    .twoFields { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 22px; }
+    .suffixInput span { flex: 0 0 auto; padding-right: 13px; color: var(--muted); font-size: 11px; font-weight: 600; }
+    .field small { color: var(--muted); font-size: 10px; font-weight: 400; }
+    .note { display: flex; align-items: start; gap: 9px; margin-top: 22px; padding: 12px; border-radius: 9px; color: #5e7067; background: #f1f5f1; }
+    .note svg { flex: 0 0 15px; width: 15px; margin-top: 2px; color: var(--accent); }
+    .note p { font-size: 10px; line-height: 1.55; }
+    .resultPanel { padding: 25px; color: #fff; background: #19382d; }
+    .resultLabel { color: #b5d4c4; font-size: 9px; font-weight: 800; letter-spacing: .12em; }
+    .emiAmount { display: block; margin-top: 12px; font-size: clamp(36px, 4vw, 48px); font-weight: 760; line-height: 1; letter-spacing: -.06em; }
+    .perMonth { display: block; margin-top: 7px; color: #c3d6cc; font-size: 12px; }
+    .totalBox { display: grid; gap: 13px; margin-top: 25px; padding: 18px 0; border-top: 1px solid #ffffff24; border-bottom: 1px solid #ffffff24; }
+    .totalBox div { display: flex; justify-content: space-between; gap: 12px; color: #d0ded6; font-size: 11px; }
+    .totalBox strong { color: #fff; font-size: 12px; }
+    .totalBox .totalDue { align-items: end; padding-top: 12px; border-top: 1px solid #ffffff24; color: #fff; font-size: 12px; font-weight: 700; }
+    .totalBox .totalDue strong { color: #d4ef7d; font-size: 16px; }
+    .splitTitle { display: flex; justify-content: space-between; margin-top: 20px; color: #e0e9e3; font-size: 10px; }
+    .splitBar { display: flex; height: 8px; overflow: hidden; margin-top: 9px; border-radius: 99px; background: #b47751; }
+    .splitBar span { border-radius: inherit; background: #d4ef7d; }
+    .legend { display: flex; gap: 16px; margin-top: 9px; color: #d4e0d8; font-size: 9px; }
+    .legend span { display: inline-flex; align-items: center; gap: 6px; }
+    .legend i { width: 7px; height: 7px; border-radius: 50%; background: #d4ef7d; }
+    .legend span + span i { background: #b47751; }
+    .schedule { margin-top: 17px; padding: 22px 24px; }
+    .scheduleHeading { display: flex; align-items: end; justify-content: space-between; gap: 18px; margin-bottom: 17px; }
+    .scheduleHeading h2 { margin-top: 5px; font-size: 22px; font-weight: 740; letter-spacing: -.04em; }
+    .scheduleHeading p:last-child { margin-top: 4px; color: var(--muted); font-size: 11px; }
+    .scheduleHeading > span { flex: 0 0 auto; color: var(--muted); font-size: 10px; }
+    .tableWrap { overflow-x: auto; }
+    .schedule table { width: 100%; min-width: 620px; text-align: right; }
+    .schedule th { padding: 10px 12px; color: var(--muted); background: #f4f7f3; font-size: 9px; font-weight: 750; letter-spacing: .04em; }
+    .schedule th:first-child, .schedule td:first-child { text-align: left; }
+    .schedule td { padding: 11px 12px; border-bottom: 1px solid #edf1ed; font-size: 11px; font-variant-numeric: tabular-nums; }
+    .scheduleFootnote { margin-top: 12px; color: var(--muted); font-size: 10px; }
+    @media (max-width: 900px) {
+        .workspace { grid-template-columns: 1fr; }
+        .resultPanel { display: grid; grid-template-columns: 1fr 1fr; column-gap: 22px; }
+        .resultLabel, .emiAmount, .perMonth { grid-column: 1; }
+        .totalBox, .splitTitle, .splitBar, .legend { grid-column: 2; }
+        .totalBox { grid-row: 1 / span 3; margin-top: 0; padding-top: 0; border-top: 0; }
+        .splitTitle { margin-top: 4px; }
+    }
+    @media (max-width: 650px) {
+        .hero { align-items: flex-start; flex-direction: column; }
+        .heroNote { width: 100%; }
+        .presetRow { flex-wrap: wrap; }
+        .presetRow button { flex: 1 0 auto; justify-content: center; }
+        .presetRow .resetButton { margin-left: 0; }
+        .inputPanel, .resultPanel, .schedule { padding: 18px; }
+        .twoFields { grid-template-columns: 1fr; }
+        .resultPanel { display: block; }
+        .totalBox { margin-top: 23px; padding-top: 16px; border-top: 1px solid #ffffff24; }
+        .scheduleHeading { align-items: flex-start; flex-direction: column; }
+    }
+}
